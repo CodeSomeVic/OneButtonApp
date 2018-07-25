@@ -13,15 +13,21 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'app'`, async(() => {
+  it(`should have as title 'OneButtonApp'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
+    expect(app.title).toEqual('OneButtonApp');
   }));
-  it('should render title in a h1 tag', async(() => {
+  it(`should have as displayText 'This should say something interesting'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to OneButtonApp!');
+    const app = fixture.debugElement.componentInstance;
+    app.textSelector(false);
+    expect(app.displayText).toEqual('This should say something interesting');
+  }));
+  it(`should have as displayText 'Inertia is a property of matter'`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.textSelector(true);
+    expect(app.displayText).toEqual('Inertia is a property of matter');
   }));
 });
