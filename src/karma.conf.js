@@ -25,7 +25,6 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browserNoActivityTimeout: 2000,
     browsers: ['Chrome'],
     customLaunchers: {
       ChromeHeadlessCI: {
