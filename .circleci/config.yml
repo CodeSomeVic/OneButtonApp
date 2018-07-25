@@ -34,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm test --watch=false --browsers=ChromeHeadlessCI
+      - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
